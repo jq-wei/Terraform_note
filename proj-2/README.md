@@ -10,3 +10,12 @@
 
 Listing suitable EC2:
 `aws ec2 describe-images --filters "Name=virtualization-type,Values=hvm" "Name=architecture,Values=x86_64" --query 'Images[].[ImageId,Name]' --output table`
+
+
+# some useful terraform cmd
+
+1. `terraform state list` show all the stated resources
+2. `terraform state show aws_eip.one` show the details of a specfic resource, i.e., aws_eip.one
+3. `terraform refresh`
+4. `terraform destroy/apply -target aws_instance.web-server-instance` to destroy or create a specific resource
+5. `terraform apply -var-file example.tfvars` to look for var value in a file named as example.tfvars
